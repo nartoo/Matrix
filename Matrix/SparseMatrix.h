@@ -129,8 +129,8 @@ void SparseMatrix<T>::Add(const SparseMatrix<T> &b, SparseMatrix<T> &c) const
 	while (ct < terms && cb < b.terms)
 	{
 		// 每一个元素的行主索引
-		int indt = a[ct].row * cols + a[ct].col;
-		int indb = b.a[cb].row * cols + b.a[cb].col;
+		int indt = a[ct].(row - 1) * cols + a[ct].col;
+		int indb = b.a[cb].(row - 1) * cols + b.a[cb].col;
 		if (indt < indb) 
 		{
 			// b 的元素在后
