@@ -156,7 +156,7 @@ void SparseMatrix<T>::Add(const SparseMatrix<T> &b, SparseMatrix<T> &c) const
 			else { c.Append(b.a[cb]); cb++; } // b的下一个元素
 		}
 	}
-	// 复制剩余元素
+	// 复制剩余元素，以下两种情况只有一种能够执行。
 	for (; ct < terms; ct++)
 		c.Append(a[ct]);
 	for (; cb < b.terms; cb++)
